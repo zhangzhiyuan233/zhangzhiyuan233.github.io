@@ -228,7 +228,7 @@
 <p>以上便是ggplot2数据可视化的绘图方法了，可以参考cheatsheet，画出想要的图形。</p>
 <h2 id="3-4-老师的强迫症"><a href="#3-4-老师的强迫症" class="headerlink" title="3.4 老师的强迫症"></a>3.4 老师的强迫症</h2><p>之前在上这门课时，我的老师每次绘图一定要把灰色底色调成白色，并且加上不同的标题，副标题，x轴和y轴的标注也要修改,顺便还要居个中。这里也展示一下如何修改，其实很简单，多加几个命令就可以了。</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy)) + </span><br><span class="line">  theme_light() +theme(plot.title = element_text(hjust = <span class="number">0.5</span>), plot.subtitle = element_text(hjust = <span class="number">0.5</span>))+</span><br><span class="line">  labs(title = <span class="string">"This is title"</span>, subtitle = <span class="string">" This is subtitle"</span>, x = <span class="string">"displ(new)"</span>, y = <span class="string">"hwy(new)"</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="plot9.jpeg" alt=""></p>
+<p><img src="plot10.jpeg" alt=""><img src="/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/plot10.jpeg" class="" title="This is an image"></p>
 
       
 
