@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Johnson的博客</title>
+  <title>R语言回顾二：图形语法，基于ggplot2的可视化操作 | Johnson的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="STAT美研在读&#x2F;DS&#x2F;ML&#x2F;R&#x2F;Python&#x2F;Heartstone&#x2F;Chelsea">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Johnson的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="一、前言今天我们来聊一聊R语言的数据可视化，主要是ggplot2的使用方法，并且会以一个例子，来解释如何使用R语言对回归模型进行绘图。 二、图形语法图形语法指的是描述图形规则的一整套体系。《the grammar of graphics》中便详细介绍了这种语法体系，有兴趣的同学可以到亚马逊上自行购买。在R语言中，ggplot2包便是为了实现这一体系而产生的。他的功能非常强大，而且简洁好用，可读性强">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R语言回顾二：图形语法，基于ggplot2的可视化操作">
+<meta property="og:url" content="http://yoursite.com/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Johnson的博客">
-<meta property="og:description" content="STAT美研在读&#x2F;DS&#x2F;ML&#x2F;R&#x2F;Python&#x2F;Heartstone&#x2F;Chelsea">
+<meta property="og:description" content="一、前言今天我们来聊一聊R语言的数据可视化，主要是ggplot2的使用方法，并且会以一个例子，来解释如何使用R语言对回归模型进行绘图。 二、图形语法图形语法指的是描述图形规则的一整套体系。《the grammar of graphics》中便详细介绍了这种语法体系，有兴趣的同学可以到亚马逊上自行购买。在R语言中，ggplot2包便是为了实现这一体系而产生的。他的功能非常强大，而且简洁好用，可读性强">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/plot1.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/plot1.png">
+<meta property="article:published_time" content="2020-01-23T16:07:09.000Z">
+<meta property="article:modified_time" content="2020-01-23T16:54:01.305Z">
 <meta property="article:author" content="Johnson">
+<meta property="article:tag" content="R语言">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/plot1.png">
   
     <link rel="alternative" href="/atom.xml" title="Johnson的博客" type="application/atom+xml">
   
@@ -152,36 +158,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-R语言回顾二：图形语法，基于ggplot2的可视化操作" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      R语言回顾二：图形语法，基于ggplot2的可视化操作
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+
+        
+        <a href="/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/" class="archive-article-date">
   	<time datetime="2020-01-23T16:07:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-23</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/">R语言回顾二：图形语法，基于ggplot2的可视化操作</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>今天我们来聊一聊R语言的数据可视化，主要是ggplot2的使用方法，并且会以一个例子，来解释如何使用R语言对回归模型进行绘图。</p>
+<h2 id="二、图形语法"><a href="#二、图形语法" class="headerlink" title="二、图形语法"></a>二、图形语法</h2><p>图形语法指的是描述图形规则的一整套体系。《the grammar of graphics》中便详细介绍了这种语法体系，有兴趣的同学可以到亚马逊上自行购买。在R语言中，ggplot2包便是为了实现这一体系而产生的。他的功能非常强大，而且简洁好用，可读性强，只需要学习一种体系，便能在不同场景下应用，这也是我们学习它最主要的原因。当然，我们不需要学习整个图形语法的内容，我们只需要知道他在R语言中是如何运用即可。</p>
+<h2 id="三、创建我们的第一个图"><a href="#三、创建我们的第一个图" class="headerlink" title="三、创建我们的第一个图"></a>三、创建我们的第一个图</h2><p>我们首先来绘制一个最简单的图，通过这个图，我们便可以大致了解ggplot2的使用方法。我们采用的数据是R语言自带的mpg数据，我们想知道其中汽车发动机排量(displ,加仑)和汽车在高速上燃油效率(hwy，英里/加仑)之间的关系。</p>
+<p><img src="plot1.png" alt=""><img src="/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/plot1.png" class="" title="This is an image"></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -193,84 +222,126 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/22/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%B8%80%EF%BC%9AMap&Reduce/" class="archive-article-date">
-  	<time datetime="2020-01-22T22:19:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/22/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%B8%80%EF%BC%9AMap&Reduce/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">R语言回顾一：Map&amp;Reduce</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/22/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%B8%80%EF%BC%9AMap&Reduce/">R语言回顾一：Map&amp;Reduce</a>
-    </h1>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="R语言回顾二：图形语法，基于ggplot2的可视化操作" data-title="R语言回顾二：图形语法，基于ggplot2的可视化操作" data-url="http://yoursite.com/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">R语言</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-01-22T16:48:13.457Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -293,8 +364,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

@@ -154,6 +154,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-R语言回顾二：图形语法，基于ggplot2的可视化操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/">R语言回顾二：图形语法，基于ggplot2的可视化操作</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+  	<time datetime="2020-01-23T16:07:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>今天我们来聊一聊R语言的数据可视化，主要是ggplot2的使用方法，并且会以一个例子，来解释如何使用R语言对回归模型进行绘图。</p>
+<h2 id="二、图形语法"><a href="#二、图形语法" class="headerlink" title="二、图形语法"></a>二、图形语法</h2><p>图形语法指的是描述图形规则的一整套体系。《the grammar of graphics》中便详细介绍了这种语法体系，有兴趣的同学可以到亚马逊上自行购买。在R语言中，ggplot2包便是为了实现这一体系而产生的。他的功能非常强大，而且简洁好用，可读性强，只需要学习一种体系，便能在不同场景下应用，这也是我们学习它最主要的原因。当然，我们不需要学习整个图形语法的内容，我们只需要知道他在R语言中是如何运用即可。</p>
+<h2 id="三、创建我们的第一个图"><a href="#三、创建我们的第一个图" class="headerlink" title="三、创建我们的第一个图"></a>三、创建我们的第一个图</h2><p>我们首先来绘制一个最简单的图，通过这个图，我们便可以大致了解ggplot2的使用方法。我们采用的数据是R语言自带的mpg数据，我们想知道其中汽车发动机排量(displ,加仑)和汽车在高速上燃油效率(hwy，英里/加仑)之间的关系。</p>
+<p><img src="plot1.png" alt=""><img src="/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/plot1.png" class="" title="This is an image"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">R语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-R语言回顾一：Map&amp;Reduce" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -230,6 +307,9 @@ out
 <span class="comment">#&gt;  [1]  7  1  8  3  2  4 10  5  9  6</span></code></pre>
 <p>和<code>map</code>函数一样，我们也可以对<code>Reduce</code>函数传入参数，其效果和<code>map</code>函数如出一辙，我们也可以参考下图：<br><img src="reduce-arg.png" alt=""><img src="/2020/01/22/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%B8%80%EF%BC%9AMap&Reduce/reduce-arg.png" class="" title="This is an image"></p>
 <p>以上便是R语言中两种最重要的functional函数—-<code>Map</code>和<code>Reduce</code>的介绍了，下一期我们会回顾R语言的图形语法，使用ggplot2绘图。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li>Advanced R(<a href="https://adv-r.hadley.nz/" target="_blank" rel="noopener">https://adv-r.hadley.nz/</a>)</li>
+</ul>
 
       
 
