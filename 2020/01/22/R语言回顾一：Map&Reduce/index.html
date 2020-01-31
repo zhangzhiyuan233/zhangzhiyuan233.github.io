@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/01/22/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%B8%80%EF%BC%9AMap&Reduce/reduce-arg.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/22/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%B8%80%EF%BC%9AMap&Reduce/reduce-arg.png">
 <meta property="article:published_time" content="2020-01-22T22:19:37.000Z">
-<meta property="article:modified_time" content="2020-01-23T16:28:57.836Z">
+<meta property="article:modified_time" content="2020-01-31T03:00:32.491Z">
 <meta property="article:author" content="Johnson">
 <meta property="article:tag" content="R语言">
 <meta name="twitter:card" content="summary">
@@ -189,6 +189,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>这是我的第一篇正式博客，我将用一个系列回顾R语言的几块重要内容，目前打算写三期回顾，第一期是以Map和Reduce为代表的functional 函数介绍，第二期是图形语法，R语言中ggplot2的图形可视化介绍，第三期是R语言中pipline结构下的数据处理。之前和国内同为统计专业研究生的朋友聊到一学期学到的R语言内容，发现国内R语言教学中这三块好像涉及的不多（欢迎打脸），但是个人觉得这三块可以说是R语言的精髓，如果抛去这三块重要内容，我也不知道R语言相比其他语言（如Python）或者统计软件在统计学方面的优势在哪里（再次欢迎打脸）。嗯，废话不多说，再说下去脸就要被打肿了，我们就直接开始今天的主题吧。</p>
+<a id="more"></a>
+
 <h2 id="二、Functional-函数"><a href="#二、Functional-函数" class="headerlink" title="二、Functional 函数"></a>二、Functional 函数</h2><p>在R语言中，一个functional函数是指将一个函数作为输入，将一个向量作为输出的函数。这里的functional翻译成“功能性的”，可能比较容易让人产生误解，翻译成“泛函”倒是比较恰当。即我们在泛函分析中学到的，将函数组成的向量空间作为定义域，将实数组成的向量空间作为值域的“函数的函数”。具体在R语言中，我们可以举一个非常简单的例子，下面这个<code>randomise</code>函数便是一个functional函数，它将输入的函数作用于1000个随机数上：</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">randomise &lt;- <span class="keyword">function</span>(f) f(runif(<span class="number">1e3</span>))</span><br><span class="line">randomise(mean)</span><br><span class="line"><span class="comment">#&gt; [1] 0.506</span></span><br><span class="line">randomise(mean)</span><br><span class="line"><span class="comment">#&gt; [1] 0.501</span></span><br><span class="line">randomise(sum)</span><br><span class="line"><span class="comment">#&gt; [1] 489</span></span><br></pre></td></tr></table></figure>
 <p><code>map</code>和<code>reduce</code>函数就是最典型的 functional函数，我们之所以使用functional函数，主要是为了避免过多的使用循环结构，因为循环结构不仅在R中运行速度很慢，并且也会使得代码相对不透明。而使用functional函数，则能够很清晰的展现整个数据处理过程，并且大大加速代码的运行速度，使得代码的可靠性增加。</p>
@@ -590,6 +592,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="https://rstudio.com/wp-content/uploads/2015/04/ggplot2-cheatsheet.pdf" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>ggplot2</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://eastlakeside.gitbook.io/interpy-zh/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Intermediate Python</a>
             </li>
           
         </ul>

@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>R语言回顾二：图形语法，基于ggplot2的可视化操作 | Johnson的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前言今天我们来聊一聊R语言的数据可视化，主要是ggplot2的使用方法，并且会以一个例子，来解释如何使用R语言对回归模型进行绘图。 二、图形语法图形语法指的是描述图形规则的一整套体系。《the grammar of graphics》中便详细介绍了这种语法体系，有兴趣的同学可以到亚马逊上自行购买。在R语言中，ggplot2包便是为了实现这一体系而产生的。他的功能非常强大，而且简洁好用，可读性强">
+  <meta name="description" content="一、前言今天我们来聊一聊R语言的数据可视化，主要是ggplot2的使用方法，并且会以一个例子，来解释如何使用R语言对回归模型进行绘图。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R语言回顾二：图形语法，基于ggplot2的可视化操作">
 <meta property="og:url" content="http://yoursite.com/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Johnson的博客">
-<meta property="og:description" content="一、前言今天我们来聊一聊R语言的数据可视化，主要是ggplot2的使用方法，并且会以一个例子，来解释如何使用R语言对回归模型进行绘图。 二、图形语法图形语法指的是描述图形规则的一整套体系。《the grammar of graphics》中便详细介绍了这种语法体系，有兴趣的同学可以到亚马逊上自行购买。在R语言中，ggplot2包便是为了实现这一体系而产生的。他的功能非常强大，而且简洁好用，可读性强">
+<meta property="og:description" content="一、前言今天我们来聊一聊R语言的数据可视化，主要是ggplot2的使用方法，并且会以一个例子，来解释如何使用R语言对回归模型进行绘图。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/plot1.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/plot1.png">
@@ -48,7 +48,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/plot16.jpeg">
 <meta property="og:image" content="http://yoursite.com/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/plot16.jpeg">
 <meta property="article:published_time" content="2020-01-23T16:07:09.000Z">
-<meta property="article:modified_time" content="2020-01-23T21:09:18.131Z">
+<meta property="article:modified_time" content="2020-01-31T03:00:58.163Z">
 <meta property="article:author" content="Johnson">
 <meta property="article:tag" content="R语言">
 <meta name="twitter:card" content="summary">
@@ -209,6 +209,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>今天我们来聊一聊R语言的数据可视化，主要是ggplot2的使用方法，并且会以一个例子，来解释如何使用R语言对回归模型进行绘图。</p>
+<a id="more"></a>
+
 <h2 id="二、图形语法"><a href="#二、图形语法" class="headerlink" title="二、图形语法"></a>二、图形语法</h2><p>图形语法指的是描述图形规则的一整套体系。《the grammar of graphics》中便详细介绍了这种语法体系，有兴趣的同学可以到亚马逊上自行购买。在R语言中，ggplot2包便是为了实现这一体系而产生的。他的功能非常强大，而且简洁好用，可读性强，只需要学习一种体系，便能在不同场景下应用，这也是我们学习它最主要的原因。当然，我们不需要学习整个图形语法的内容，我们只需要知道他在R语言中是如何运用即可。</p>
 <h2 id="三、创建我们的第一张图"><a href="#三、创建我们的第一张图" class="headerlink" title="三、创建我们的第一张图"></a>三、创建我们的第一张图</h2><h3 id="3-1-第一张图"><a href="#3-1-第一张图" class="headerlink" title="3.1 第一张图"></a>3.1 第一张图</h3><p>我们首先来绘制一个最简单的图，通过这个图，我们便可以大致了解ggplot2的使用方法。我们采用的数据是R语言自带的mpg数据，我们想知道其中汽车发动机排量(displ,加仑)和汽车在高速上燃油效率(hwy，英里/加仑)之间的关系。</p>
 <p><img src="plot1.png" alt=""><img src="/2020/01/23/R%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%BD%A2%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%9F%BA%E4%BA%8Eggplot2%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/plot1.png" class="" title="This is an image"></p>
@@ -632,6 +634,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="https://rstudio.com/wp-content/uploads/2015/04/ggplot2-cheatsheet.pdf" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>ggplot2</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://eastlakeside.gitbook.io/interpy-zh/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Intermediate Python</a>
             </li>
           
         </ul>
